@@ -4,7 +4,6 @@ class Pokemon
 
   def initialize(attributes)
     attributes.each {|key, value| self.send("#{key}=", value)}
-    @hp = 60
   end
 
   def self.save(name, type, db)
