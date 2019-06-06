@@ -19,7 +19,7 @@ class Pokemon
     SELECT * FROM pokemon
     WHERE id=?
     SQL
-    Pokemon.new(db.execute(sql, id).first)
+    db.execute(sql, id).first
   end
 
 
