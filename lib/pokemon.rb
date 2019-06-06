@@ -7,12 +7,12 @@ class Pokemon
     @hp = 60
   end
 
-  def self.save(name, type, db)
+  def self.save(name, type, hp, db)
     sql = <<-SQL
     INSERT INTO pokemon(name, type, hp)
     VALUES(?,?,?)
     SQL
-    db.execute(sql, name, type)
+    db.execute(sql, name, type, hp)
   end
 
   def self.find(id, db)
