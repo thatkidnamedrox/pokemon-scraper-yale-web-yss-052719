@@ -27,6 +27,7 @@ class Pokemon
   def alter_hp(hp, db)
     sql = <<-SQL
     UPDATE pokemon SET hp=?
+    WHERE id=?
     SQL
     row = db.execute(sql, id).first
     Pokemon.new(id: row[0], name: row[1], type: row[2], db: db)
