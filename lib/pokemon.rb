@@ -1,9 +1,10 @@
 class Pokemon
 
-  attr_accessor :id, :name, :type, :db
+  attr_accessor :id, :name, :type, :db, :hp
 
   def initialize(attributes)
     attributes.each {|key, value| self.send("#{key}=", value)}
+    @hp = 60
   end
 
   def self.save(name, type, db)
@@ -22,6 +23,8 @@ class Pokemon
     row = db.execute(sql, id).first
     Pokemon.new(id: row[0], name: row[1], type: row[2], db: db)
   end
+
+  def 
 
 
 end
